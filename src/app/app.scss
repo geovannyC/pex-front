@@ -1,0 +1,79 @@
+$white1: #ededed;
+$white2: #dfdfdf;
+$white3: #cecece;
+$gray1: #d8dbea;
+$gray2: #b0bdcf;
+$gray3: #818392;
+$gray4: #717480;
+$black1: #131414;
+$black2: #252525;
+$black3: #3c3c3c;
+$black4: #4a4a4a;
+$blue1: #040E3F;
+$blue2: #0D1A5F;
+$blue3: #23317D;
+$blue4: #3a738a;
+$blue5: #4badb4;
+$blue6: #43707e;
+$blue7: #125c72;
+$orange: #ffb979;
+$orange2: #e6cdb7;
+$green: #97d39a;
+// :export {
+//   white1: $white1;
+//   white2: $white2;
+//   white3: $white3;
+//   gray1: $gray1;
+//   gray2: $gray2;
+//   gray3: $gray3;
+//   gray4: $gray4;
+//   black1: $black1;
+//   black2: $black2;
+//   black3: $black3;
+//   black4: $black4;
+//   blue1: $blue1;
+//   blue2: $blue2;
+//   blue3: $blue3;
+//   blue4: $blue4;
+//   orange: $orange;
+//   orange2: $orange2;
+//   green: $green;
+// }
+// $screen-sm-min: 0px;
+$screen-md-min: 800px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1000px;
+$h1size: 102px;
+$h2size: 86px;
+$h3size: 66px;
+$h4size: 46px;
+$prsize: 32px;
+$plsize: 26px;
+$pelsize: 20px;
+$h1smallsize: 32px;
+$h2smallsize: 28px;
+$h3smallsize: 26px;
+$h4smallsize: 24px;
+$prsmallsize: 22px;
+$plsmallsize: 18px;
+$pelsmallsize: 14px;
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}

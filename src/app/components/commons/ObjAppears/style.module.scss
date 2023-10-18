@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: auto;
+  height: auto;
+  transition: 300ms;
+  transform: translateY(-0.5cqi);
+  opacity: 0;
+}
+.actived {
+  transition: 300ms;
+  transition-delay: var(--delay);
+  transform: translateY(0cqi);
+  opacity: 1;
+}
