@@ -4,7 +4,7 @@ import InText from "../../components/commons/inText";
 import Slider from "../../components/containers/slider";
 import { data } from "./data";
 import { useRef } from "react";
-import { getAllpublications } from "../../utils/publication";
+// import { getAllpublications } from "../../utils/publication";
 const Principal = () => {
   const InTextChild = useRef();
   const changueTile = ({ font, title }) => {
@@ -15,9 +15,9 @@ const Principal = () => {
   // const handleFullScreenMode = () => {
   //   document.documentElement.requestFullscreen();
   // };
-  const callPublications = () => {
-    getAllpublications().then((result) => console.log(result));
-  };
+  // const callPublications = () => {
+  //   getAllpublications().then((result) => console.log(result));
+  // };
   return (
     <div className={styles.container}>
       <div></div>
@@ -26,7 +26,6 @@ const Principal = () => {
         data={data}
         changueTile={({ font, title }) => changueTile({ font, title })}
       />
-      <button onClick={() => callPublications()}>llamar</button>
     </div>
   );
 };
