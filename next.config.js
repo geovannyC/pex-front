@@ -2,10 +2,11 @@
 const path = require("path");
 const nextConfig = {
   output: "standalone",
-  loaders: ['style-loader', 'css-loader', 'less-loader'],
+  loaders: ["style-loader", "css-loader", "less-loader"],
   sassOptions: {
-    includePaths: [path.join(__dirname, './src/app')],
+    includePaths: [path.join(__dirname, "./src/app")],
   },
+  fastRefresh: false,
 };
 
 module.exports = nextConfig;

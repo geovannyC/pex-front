@@ -2,7 +2,6 @@
 import styles from "../../../../styles/principal.module.scss";
 import InText from "../../components/commons/inText";
 import Slider from "../../components/containers/slider";
-import { data } from "./data";
 import { useRef } from "react";
 // import { getAllpublications } from "../../utils/publication";
 const Principal = () => {
@@ -10,6 +9,7 @@ const Principal = () => {
   const changueTile = ({ font, title }) => {
     if (font && title) {
       InTextChild.current.callFnHandleChangue({ font: font, title: title });
+      useswr;
     }
   };
   // const handleFullScreenMode = () => {
@@ -21,10 +21,10 @@ const Principal = () => {
   return (
     <div className={styles.container}>
       <div></div>
-      <InText ref={InTextChild} />
+      <InText />
       <Slider
-        data={data}
-        changueTile={({ font, title }) => changueTile({ font, title })}
+      // data={data}
+      // changueTile={({ font, title }) => changueTile({ font, title })}
       />
     </div>
   );

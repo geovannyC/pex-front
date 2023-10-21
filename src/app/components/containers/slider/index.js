@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { handleChangueCurrentTextView } from "@/redux/features/app";
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { gray1, gray2 } from "../../../app.module.scss";
 import Publication from "../publication";
 
 import "swiper/css";
@@ -12,19 +13,27 @@ import "swiper/css/navigation";
 import "./style.module.scss";
 
 import styles from "./style.module.scss";
+import ContentLoader from "react-content-loader";
 
-const Slider = ({ data = [], changueTile }) => {
-  const [currentIndex, setCurrentIndex] = useState(null);
-  useEffect(() => {
-    changueTile({ font: data[1].fontFamily, title: data[1].name });
-  }, []);
+const Slider = () => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const data = [...useAppSelector((state) => state.appReducer.data)];
+  const TextStyleData = {
+    ...useAppSelector((state) => state.appReducer.textStyles),
+  };
+  const dispatch = useAppDispatch();
   const handleChangueTile = (e) => {
     setCurrentIndex(e.activeIndex);
-    changueTile({
-      font: data[e.activeIndex].fontFamily,
-      title: data[e.activeIndex].name,
-    });
+    dispatch(
+      handleChangueCurrentTextView({
+        font: TextStyleData[data[e.activeIndex].fontFamily],
+        title: data[e.activeIndex].name,
+      })
+    );
+    setLoading(false);
   };
+
   return (
     <Swiper
       effect={"coverflow"}
@@ -45,12 +54,22 @@ const Slider = ({ data = [], changueTile }) => {
       mousewheel
       simulateTouch
     >
-      {data.map((publication, index) => (
+      {data?.map((publication, index) => (
         <SwiperSlide className={styles.slide} key={publication.id}>
-          <Publication
-            active={index === currentIndex}
-            publication={publication}
-          />
+          {loading ? (
+            <ContentLoader
+              viewBox="0 0 450 400"
+              backgroundColor={gray1}
+              foregroundColor={gray2}
+            >
+              <rect x="42" y="77" rx="10" ry="10" width="100%" height="100%" />
+            </ContentLoader>
+          ) : (
+            <Publication
+              active={index === currentIndex}
+              publication={publication}
+            />
+          )}
         </SwiperSlide>
       ))}
     </Swiper>

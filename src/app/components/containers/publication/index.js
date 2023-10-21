@@ -53,9 +53,10 @@ const Publication = ({ active, publication }) => {
         <div className={styles.image2}>
           <Image
             src={imageColorPicker?.image || publication?.images[0].image}
-            fill
+            width={380}
+            height={380}
             alt="test"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
           />
         </div>
       </Card>
