@@ -1,3 +1,16 @@
+# FROM node:alpine3.17
+
+# WORKDIR /app
+
+# COPY package*.json ./
+
+# RUN npm i
+
+# COPY . .
+
+# EXPOSE 3000
+
+# CMD npm run dev
 
 FROM node:alpine3.17 AS dependencies
 
@@ -7,7 +20,7 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm i
 
-FROM node:alpine3.17 AS builder
+FROM node:16-slim AS builder
 
 WORKDIR /home/app
 COPY --from=dependencies /home/app/node_modules ./node_modules

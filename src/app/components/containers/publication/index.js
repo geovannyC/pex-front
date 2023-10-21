@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import Image from "next/image";
+
 import styles from "./style.module.scss";
 import Card from "../../commons/card";
 import ObjAppears from "../../commons/ObjAppears";
 import Contact from "../Contact";
+
 const Publication = ({ active, publication }) => {
   const [imageColorPicker, setImageColorPicker] = useState(
     publication?.images[0]
@@ -48,11 +51,11 @@ const Publication = ({ active, publication }) => {
           </div>
         </div>
         <div className={styles.image2}>
-          <img
+          <Image
             src={imageColorPicker?.image || publication?.images[0].image}
-            className={styles.image}
+            fill
             alt="test"
-            
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </Card>
