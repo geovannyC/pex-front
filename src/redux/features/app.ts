@@ -3,7 +3,7 @@ import { data } from "./temporalPubliData/data";
 import { titleStyle } from "./temporalPubliData/textStyle";
 type TextStyles = {
   title: String;
-  font: any;
+  font: object;
 };
 type PublicationsState = {
   data: Object;
@@ -33,7 +33,7 @@ export const app = createSlice({
     setDataPublications: (state, action: PayloadAction<object>) => {
       state.data = action.payload;
     },
-    handleChangueCurrentTextView: (state, action: PayloadAction<object>) => {
+    handleChangueCurrentTextView: (state, action) => {
       state.currentTextView = action.payload;
     },
     // increment: (state) => {
