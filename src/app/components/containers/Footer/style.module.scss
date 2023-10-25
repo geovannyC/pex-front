@@ -1,0 +1,17 @@
+@import "../../../app.module.scss";
+.container {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  @include xl {
+    padding-left: 20px;
+
+  }
+}
+.container h2{
+  color: $black1;
+  font-size: 0.5rem;
+  @include xl {
+    font-size: 0.8rem;
+  }
+}

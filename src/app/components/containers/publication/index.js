@@ -57,6 +57,7 @@ const Publication = ({ active, publication }) => {
             height={380}
             alt="test"
             loading="lazy"
+            quality={0}
           />
         </div>
       </Card>

@@ -93,7 +93,7 @@ export const data = [
     id: 4,
     name: "Alien",
     status: true,
-    price: 72,
+    price: 70,
     fontFamily: "nasalization",
     data: {
       statureRange: "1.5m - 2.0m",
@@ -117,7 +117,7 @@ export const data = [
     id: 5,
     name: "Trex Domado",
     status: true,
-    price: 78,
+    price: 80,
     fontFamily: "jurassicpark",
     data: {
       statureRange: "1.5m - 2.0m",
@@ -141,7 +141,7 @@ export const data = [
     id: 6,
     name: "Trex Esqueleto",
     status: true,
-    price: 80,
+    price: 82,
     fontFamily: "fear",
     data: {
       statureRange: "1.5m - 2.0m",
@@ -165,7 +165,7 @@ export const data = [
     id: 7,
     name: "Rana",
     status: true,
-    price: 78,
+    price: 74,
     fontFamily: "gutesWetter",
     data: {
       statureRange: "1.5m - 2.0m",

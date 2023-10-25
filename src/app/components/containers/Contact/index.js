@@ -7,7 +7,7 @@ import ObjAppears from "../../commons/ObjAppears";
 import styles from "./style.module.scss";
 
 const Contact = ({ active }) => {
-  const [state, setState] = useState(active);
+  const [state, setState] = useState(false);
   const handleOpenMenuToggle = (nwState) => {
     setState(nwState);
   };

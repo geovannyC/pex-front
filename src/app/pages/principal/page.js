@@ -2,6 +2,8 @@
 import styles from "../../../../styles/principal.module.scss";
 import InText from "../../components/commons/inText";
 import Slider from "../../components/containers/slider";
+import Header from "../../components/containers/Header"
+import Footer from "../../components/containers/Footer"
 import { useRef } from "react";
 // import { getAllpublications } from "../../utils/publication";
 const Principal = () => {
@@ -20,12 +22,11 @@ const Principal = () => {
   // };
   return (
     <div className={styles.container}>
-      <div></div>
+      <Header/>
       <InText />
       <Slider
-      // data={data}
-      // changueTile={({ font, title }) => changueTile({ font, title })}
       />
+      <Footer/>
     </div>
   );
 };

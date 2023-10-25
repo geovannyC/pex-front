@@ -86,7 +86,10 @@
   left: 50%;
   // }
   height: 160%;
-  filter: grayscale(30%) contrast(95%) drop-shadow(5px 5px 10px $black4);
+  @include xl {
+    filter: grayscale(30%) contrast(95%) drop-shadow(5px 5px 10px $black4);
+  }
+  filter: none;
 
   transform: translate(-50%, 50%) scale(0.8) rotate(360deg);
   transition: 0.4s ease-in-out;
@@ -162,7 +165,10 @@
     @include xl {
       left: 85%;
     }
-    filter: grayscale(0%) contrast(110%) drop-shadow(7px 7px 15px $black3);
+    @include xl {
+      filter: grayscale(0%) contrast(110%) drop-shadow(7px 7px 15px $black3);
+    }
+    filter: none;
     // height: 340px;
     left: 80%;
     bottom: 60%;
