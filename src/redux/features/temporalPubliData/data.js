@@ -36,11 +36,13 @@ export const data = [
     ],
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",
@@ -89,11 +91,13 @@ export const data = [
     ],
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",
@@ -148,11 +152,13 @@ export const data = [
     ],
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",
@@ -195,11 +201,13 @@ export const data = [
     price: 80,
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",
@@ -242,11 +250,13 @@ export const data = [
     price: 82,
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",
@@ -289,11 +299,13 @@ export const data = [
     ],
     data: [
       {
+        id: 1,
         library: "material",
         tag: "Height",
         detail: "2.40m",
       },
       {
+        id: 2,
         library: "boxicons-regular",
         tag: "Body",
         detail: "1.5m - 2.0m",

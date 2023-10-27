@@ -36,7 +36,7 @@ const Publication = ({ active, publication }) => {
         <div className={styles.textContainer}>
           <ObjAppears active={active} delay={400} parentStyles={styles.char}>
             {publication.data.map((char) => (
-              <li>
+              <li key={char.id}>
                 <DinamicIcons library={char.library} tag={char.tag} />
                 {char.detail}
               </li>

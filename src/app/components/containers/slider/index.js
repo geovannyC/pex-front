@@ -23,6 +23,10 @@ const Slider = () => {
     ...useAppSelector((state) => state.appReducer.textStyles),
   };
   const dispatch = useAppDispatch();
+  useEffect(() => {
+    changueTitle(0);
+    setLoading(false);
+  }, []);
   const changueTitle = (index) => {
     dispatch(
       handleChangueCurrentTextView({
@@ -37,10 +41,6 @@ const Slider = () => {
     changueTitle(index);
   };
 
-  useEffect(() => {
-    changueTitle(0);
-    setLoading(false);
-  }, []);
   return (
     <Swiper
       effect={"coverflow"}
