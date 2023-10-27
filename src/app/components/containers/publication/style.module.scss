@@ -71,12 +71,23 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  
   li {
+    display: flex;
     width: 100%;
     text-align: left;
     color: $white1;
     list-style-type: none;
     font-size: 200%;
+    > * {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      width: 36px;
+      z-index: 4;
+    }
   }
 }
 .image2 {

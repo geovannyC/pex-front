@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import styles from "./style.module.scss";
+import Contact from "../Contact";
+import DinamicIcons from "../../commons/dinamicIcons";
 import Card from "../../commons/card";
 import ObjAppears from "../../commons/ObjAppears";
-import Contact from "../Contact";
+
+import styles from "./style.module.scss";
 
 const Publication = ({ active, publication }) => {
   const [imageColorPicker, setImageColorPicker] = useState(
-    publication?.images[0]
+    publication?.colors[0]
   );
   const handleChangueColor = ({ color }) => {
-    if (color.id !== imageColorPicker.idColor) {
-      const result = publication?.images.find(
-        (image) => image.idColor === color.id
-      );
-      setImageColorPicker(result);
+    if (color.id !== imageColorPicker.id) {
+      return setImageColorPicker(color);
     }
   };
+
   return (
     <div
       className={`${styles.containerSlider} ${
@@ -25,7 +25,7 @@ const Publication = ({ active, publication }) => {
       }`}
     >
       <div className={styles.contact}>
-        <Contact active={active} />
+        <Contact active={active} publication={{ ...publication, colors: "" }} />
       </div>
       <Card stylesParent={styles.price}>
         <ObjAppears active={active} delay={800}>
@@ -35,12 +35,15 @@ const Publication = ({ active, publication }) => {
       <Card stylesParent={styles.description} glass>
         <div className={styles.textContainer}>
           <ObjAppears active={active} delay={400} parentStyles={styles.char}>
-            <li>2.20m</li>
-            <li>1.5m - 2.0m</li>
-            <li>Poliuretano</li>
+            {publication.data.map((char) => (
+              <li>
+                <DinamicIcons library={char.library} tag={char.tag} />
+                {char.detail}
+              </li>
+            ))}
           </ObjAppears>
           <div className={styles.colorsComponent}>
-            {publication?.availableColors.map((color) => (
+            {publication?.colors.map((color) => (
               <div
                 style={{ backgroundColor: color?.color }}
                 className={styles.color}
@@ -52,10 +55,13 @@ const Publication = ({ active, publication }) => {
         </div>
         <div className={styles.image2}>
           <Image
-            src={imageColorPicker?.image || publication?.images[0].image}
+            src={
+              imageColorPicker?.profileImage ||
+              publication?.colors[0].profileImage
+            }
             width={380}
             height={380}
-            alt="test"
+            alt="profileImage"
             loading="lazy"
             quality={0}
           />

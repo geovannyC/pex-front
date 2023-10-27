@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { handleChangueCurrentTextView } from "@/redux/features/app";
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
@@ -16,24 +16,31 @@ import styles from "./style.module.scss";
 import ContentLoader from "react-content-loader";
 
 const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const data = [...useAppSelector((state) => state.appReducer.data)];
   const TextStyleData = {
     ...useAppSelector((state) => state.appReducer.textStyles),
   };
   const dispatch = useAppDispatch();
-  const handleChangueTile = (e) => {
-    setCurrentIndex(e.activeIndex);
+  const changueTitle = (index) => {
     dispatch(
       handleChangueCurrentTextView({
-        font: TextStyleData[data[e.activeIndex].fontFamily],
-        title: data[e.activeIndex].name,
+        font: TextStyleData[data[index].fontFamily],
+        title: data[index].title,
       })
     );
-    setLoading(false);
+    setCurrentIndex(index);
+  };
+  const handleChangueTile = (e) => {
+    const index = e.activeIndex;
+    changueTitle(index);
   };
 
+  useEffect(() => {
+    changueTitle(0);
+    setLoading(false);
+  }, []);
   return (
     <Swiper
       effect={"coverflow"}
@@ -50,7 +57,6 @@ const Slider = () => {
       modules={[EffectCoverflow, Mousewheel]}
       className={styles.swiperContainer}
       onActiveIndexChange={handleChangueTile}
-      initialSlide={1}
       mousewheel
       simulateTouch
     >

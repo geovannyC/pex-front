@@ -6,7 +6,7 @@ import ObjAppears from "../../commons/ObjAppears";
 
 import styles from "./style.module.scss";
 
-const Contact = ({ active }) => {
+const Contact = ({ active, publication }) => {
   const [state, setState] = useState(false);
   const handleOpenMenuToggle = (nwState) => {
     setState(nwState);
@@ -48,15 +48,20 @@ const Contact = ({ active }) => {
         onclick={() => handleOpenMenuToggle(!state)}
       >
         <h3>Contactar</h3>
-        <Card stylesParent={styles.contactCard} glass>
-          <ObjAppears
-            active={state}
-            delay={600}
-            parentStyles={styles.textContaainer}
-          >
-            {dataContact.map((data) => handleSelectType({ data: data }))}
-          </ObjAppears>
-        </Card>
+        {active && (
+          <Card stylesParent={styles.contactCard} glass>
+            <ObjAppears
+              active={state}
+              delay={600}
+              parentStyles={styles.textContaainer}
+            >
+              {dataContact.map((data) => handleSelectType({ data: data }))}
+              {publication.contactData.map((data) =>
+                handleSelectType({ data: data })
+              )}
+            </ObjAppears>
+          </Card>
+        )}
       </Card>
     </div>
   );

@@ -133,6 +133,10 @@ $finalPCardMobile: translateY(-40cqh) scaleX(1);
     top: -80%;
   }
 }
+@keyframes hasHovered {
+  0% { visibility: hidden; }     /* property has to be removed */
+  100% { visibility: visible; }  /* from the other animations! */
+}
 .contactCard {
   display: flex;
   align-items: center;
@@ -145,9 +149,9 @@ $finalPCardMobile: translateY(-40cqh) scaleX(1);
   background-color: $gray2;
   z-index: 4;
   @include xl {
-    animation: closeCard 600ms forwards;
+    animation: closeCard 600ms forwards, hasHovered 600ms paused;
   }
-  animation: closeCardMobile 600ms forwards;
+  animation: closeCardMobile 300ms forwards, hasHovered 200ms paused;
   overflow: hidden;
   &::before {
     content: "";
@@ -163,6 +167,7 @@ $finalPCardMobile: translateY(-40cqh) scaleX(1);
     animation: animationbl 20s infinite;
   }
 }
+
 .textContaainer {
   display: flex;
   flex-direction: column;
@@ -196,7 +201,7 @@ $finalPCardMobile: translateY(-40cqh) scaleX(1);
 }
 .actived .contactCard {
   @include xl {
-    animation: openCard 600ms forwards;
+    animation: openCard 600ms forwards, hasHovered 1ms;
   }
-  animation: openCardMobile 600ms forwards;
+  animation: openCardMobile 300ms forwards, hasHovered 1ms;
 }

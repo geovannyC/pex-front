@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@styled-icons/boxicons-logos": "^10.47.0",
+    "@styled-icons/boxicons-regular": "^10.47.0",
+    "@styled-icons/material": "^10.47.0",
+    "@styled-icons/material-rounded": "^10.47.0",
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
