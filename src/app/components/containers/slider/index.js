@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { handleChangueCurrentTextView } from "@/redux/features/app";
-import { EffectCoverflow, Mousewheel } from "swiper/modules";
+import { EffectCoverflow, Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { gray1, gray2 } from "../../../app.module.scss";
 import Publication from "../publication";
@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./style.module.scss";
+import "swiper/css/pagination";
 
 import styles from "./style.module.scss";
 import ContentLoader from "react-content-loader";
@@ -23,10 +23,6 @@ const Slider = () => {
     ...useAppSelector((state) => state.appReducer.textStyles),
   };
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    changueTitle(0);
-    setLoading(false);
-  }, []);
   const changueTitle = (index) => {
     dispatch(
       handleChangueCurrentTextView({
@@ -40,7 +36,10 @@ const Slider = () => {
     const index = e.activeIndex;
     changueTitle(index);
   };
-
+  useEffect(() => {
+    changueTitle(0);
+    setLoading(false);
+  }, []);
   return (
     <Swiper
       effect={"coverflow"}
@@ -54,11 +53,15 @@ const Slider = () => {
         depth: 100,
         slideShadows: false,
       }}
-      modules={[EffectCoverflow, Mousewheel]}
+      modules={[EffectCoverflow, Mousewheel, Pagination]}
       className={styles.swiperContainer}
       onActiveIndexChange={handleChangueTile}
       mousewheel
       simulateTouch
+      pagination={{
+        clickable: true,
+        bulletActiveClass: styles.swiperPaginationBulletActive,
+      }}
     >
       {data?.map((publication, index) => (
         <SwiperSlide className={styles.slide} key={publication.id}>

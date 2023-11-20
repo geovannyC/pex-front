@@ -1,17 +1,48 @@
 @import "../../../app.module.scss";
 .container {
-  display: flex;
-  align-items: center;
-  padding-left: 16px;
+  display: grid;
   @include xl {
-    padding-left: 20px;
-
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 1;
+  }
+  grid-template-columns: 1;
+  grid-template-rows: 60% 1fr;
+  align-items: center;
+  padding: 0 16px;
+  @include xl {
+    padding: 0 20px;
   }
 }
-.container h2{
+.socialContainer {
+  display: flex;
+  align-items: end;
+  gap: 2%;
+  height: 100%;
+  width: 100%;
+  order: 1;
+  @include xl {
+    order: 2;
+    font-size: 0.8rem;
+    align-items: center;
+  }
+  justify-content: space-evenly;
+}
+.container h2 {
   color: $black1;
+  order: 2;
   font-size: 0.5rem;
   @include xl {
+    order: 1;
     font-size: 0.8rem;
   }
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  color: $white1;
+  @include xl {
+    width: 32px;
+    height: 32px;
+  }
+  color: $gray4;
 }

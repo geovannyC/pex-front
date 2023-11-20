@@ -1,8 +1,14 @@
-
 * {
   font-family: "Gotham-Medium";
   padding: 0;
   margin: 0;
+}
+:root {
+  color-scheme: light only;
+  background-color: #d8dbea;
+}
+.light{
+  background-color: #d8dbea;
 }
 @font-face {
   font-family: "Woodman-HeavyPress";
@@ -18,6 +24,16 @@
   font-family: "Gotham-Medium";
   src: url("../public/fonts/Gotham-Font/GothamMedium.ttf");
   font-weight: 600;
+}
+@font-face {
+  font-family: "Gotham-Light";
+  src: url("../public/fonts/Gotham-Font/Gotham-Light.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../public/fonts/Gotham-Font/Gotham-Bold.otf");
+  font-weight: bolder;
 }
 @font-face {
   font-family: "Woodman-Rounded";

@@ -3,6 +3,8 @@ import { dataContact } from "./data";
 
 import Card from "../../commons/card";
 import ObjAppears from "../../commons/ObjAppears";
+import HandleSelectType from "../LinkedIcon";
+import DinamicIcons from "../../commons/dinamicIcons";
 
 import styles from "./style.module.scss";
 
@@ -15,29 +17,15 @@ const Contact = ({ active, publication }) => {
     if (!active) handleOpenMenuToggle(false);
   }, [active]);
 
-  const handleSelectType = ({ data = {} }) => {
-    if (data.type === "redirect")
-      return (
-        <li
-          key={data.id}
-          onClick={() => window.open(data.url)}
-          style={{ cursor: "pointer" }}
-        >
-          {data.txt}
-        </li>
-      );
-    if (data.type === "wsp")
-      return (
-        <li
-          key={data.id}
-          onClick={() => window.open(data.url)}
-          style={{ cursor: "pointer" }}
-        >
-          {data.txt}
-        </li>
-      );
-    return <li key={data.id}>{data.txt}</li>;
-  };
+
+  const ListDetail = ({ data }) => (
+    <li key={data.id} className={styles.listDetail}>
+      <div className={styles.icon}>
+        <DinamicIcons library={data.icon?.library} tag={data.icon?.tag} />
+      </div>
+      {data.txt}
+    </li>
+  );
   return (
     <div>
       <Card
@@ -55,11 +43,16 @@ const Contact = ({ active, publication }) => {
               delay={600}
               parentStyles={styles.textContaainer}
             >
-              {dataContact.map((data) => handleSelectType({ data: data }))}
-              {publication.contactData.map((data) =>
-                handleSelectType({ data: data })
-              )}
+              {dataContact.map((data) => (
+                <ListDetail key={data.id} data={data} />
+              ))}
+              <div className={styles.socialContainer}>
+                {publication.contactData.map((data) => (
+                  <HandleSelectType data={data} key={data.id} />
+                ))}
+              </div>
             </ObjAppears>
+            <small>*Selecciona una red social para contactarnos</small>
           </Card>
         )}
       </Card>

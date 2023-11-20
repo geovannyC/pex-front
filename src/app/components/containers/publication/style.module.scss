@@ -133,9 +133,10 @@
 }
 
 .containerSliderActive {
-  height: 50%;
+  height: 60%;
   width: 90%;
   @include xl {
+    height: 50%;
     width: 70%;
   }
   transition-delay: 400ms;
@@ -158,7 +159,7 @@
     height: 5cqh;
     border-radius: 16px;
     top: 80%;
-    left: calc(50% - (20cqh / 2));
+    left: calc(50% - (22.5cqh / 2));
   }
   .description {
     width: 100%;

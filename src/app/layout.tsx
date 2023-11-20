@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <meta name="color-scheme" content="light only" />
         <link rel="shortcut icon" href="/logo3.ico" />
       </Head>
-      <body>
+      <body className="light" content="light only">
         <Providers>{children}</Providers>
       </body>
     </html>
