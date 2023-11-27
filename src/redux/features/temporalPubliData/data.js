@@ -160,7 +160,7 @@ export const data = [
     id: 3,
     title: "Alien",
     status: true,
-    price: 70,
+    price: 64,
     fontFamily: "nasalization",
     contactData: [
       {
@@ -203,7 +203,7 @@ export const data = [
         id: 1,
         library: "material",
         tag: "Height",
-        detail: "2.40m",
+        detail: "2.10m",
       },
       {
         id: 2,
@@ -262,13 +262,13 @@ export const data = [
         },
       },
     ],
-    price: 80,
+    price: 78,
     data: [
       {
         id: 1,
         library: "material",
         tag: "Height",
-        detail: "2.40m",
+        detail: "1.60m",
       },
       {
         id: 2,
@@ -327,13 +327,13 @@ export const data = [
         },
       },
     ],
-    price: 82,
+    price: 78,
     data: [
       {
         id: 1,
         library: "material",
         tag: "Height",
-        detail: "2.40m",
+        detail: "2.50m",
       },
       {
         id: 2,
@@ -356,7 +356,7 @@ export const data = [
     title: "Rana",
     status: true,
     fontFamily: "gutesWetter",
-    price: 74,
+    price: 76,
     contactData: [
       {
         id: 231,
@@ -398,7 +398,7 @@ export const data = [
         id: 1,
         library: "material",
         tag: "Height",
-        detail: "2.40m",
+        detail: "2.20m",
       },
       {
         id: 2,
