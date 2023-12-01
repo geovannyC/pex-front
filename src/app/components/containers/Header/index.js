@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./style.module.scss";
-import logo from "../../../../../public/logo3.svg";
 import Image from "next/image";
+import logo from "../../../../../public/logo3.svg";
+import styles from "./style.module.scss";
 const Header = () => {
   return (
     <div className={styles.container}>

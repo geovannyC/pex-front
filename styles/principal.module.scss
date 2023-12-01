@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
+  background-color: $gray1;
   @include xl {
     grid-template-rows: 10% 20% 1fr 5%;
   }

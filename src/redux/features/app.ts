@@ -5,10 +5,11 @@ type TextStyles = {
   title: String;
   font: object;
 };
-type PublicationsState = {
+type InitialState = {
   data: Object;
   currentTextView: TextStyles;
   textStyles: Object;
+  currentSeason: String;
 };
 
 const initialState = {
@@ -23,7 +24,8 @@ const initialState = {
     },
   },
   textStyles: titleStyle,
-} as PublicationsState;
+  currentSeason: "christmas",
+} as InitialState;
 
 export const app = createSlice({
   name: "app",
