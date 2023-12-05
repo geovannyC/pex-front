@@ -6,6 +6,7 @@ type TextStyles = {
   font: object;
 };
 type InitialState = {
+  states: Object;
   data: Object;
   currentTextView: TextStyles;
   textStyles: Object;
@@ -13,6 +14,11 @@ type InitialState = {
 };
 
 const initialState = {
+  states: {
+    loading: true,
+    loadingSlider: true,
+    loadingImages: true,
+  },
   data: data,
   currentTextView: {
     title: "",
@@ -38,6 +44,9 @@ export const app = createSlice({
     handleChangueCurrentTextView: (state, action) => {
       state.currentTextView = action.payload;
     },
+    handleChangueStatesApp: (state, action) => {
+      state.states = { ...state.states, ...action.payload };
+    },
     // increment: (state) => {
     //   state.value += 1;
     // },
@@ -53,6 +62,9 @@ export const app = createSlice({
   },
 });
 
-export const { setDataPublications, handleChangueCurrentTextView } =
-  app.actions;
+export const {
+  setDataPublications,
+  handleChangueCurrentTextView,
+  handleChangueStatesApp,
+} = app.actions;
 export default app.reducer;

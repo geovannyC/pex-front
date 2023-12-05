@@ -17,7 +17,9 @@ const Publication = ({ active, publication }) => {
       return setImageColorPicker(color);
     }
   };
-
+  const imageLoader = ({ src }) => {
+    return `https://i.postimg.cc/${src}`;
+  };
   return (
     <div
       className={`${styles.containerSlider} ${
@@ -55,10 +57,13 @@ const Publication = ({ active, publication }) => {
         </div>
         <div className={styles.image2}>
           <Image
+            loader={imageLoader}
             src={
               imageColorPicker?.profileImage ||
               publication?.colors[0].profileImage
             }
+            // src="me.png"
+            // alt="Picture of the author"
             width={380}
             height={380}
             alt="profileImage"

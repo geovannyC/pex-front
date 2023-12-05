@@ -1,12 +1,3 @@
-import treximage from "./trex.json";
-import trexBrown from "./trexBrown.json";
-import trexLGreen from "./trexLGreen.json";
-import tiburonAzul from "./tiburonAzul.json";
-import tiburonGris from "./tiburonGris.json";
-import alien from "./alien.json";
-import dinosaurioDomado from "./dinosaurioDomado.json";
-import rana from "./rana.json";
-import squeletonTrex from "./squeletonTrex.json";
 export const data = [
   {
     id: 1,
@@ -69,13 +60,15 @@ export const data = [
         id: 1,
         color: "#53c8d8",
         name: "blue",
-        profileImage: tiburonAzul.tiburonAzul,
+        profileImage:
+          "YSfzhtz8/blueshark-removebg-preview-1.png",
       },
       {
         id: 2,
         color: "#586769",
         name: "gray",
-        profileImage: tiburonGris.tiburonGris,
+        profileImage:
+          "vBvz1Sr0/graysharlk-removebg-preview.png",
       },
     ],
   },
@@ -140,19 +133,22 @@ export const data = [
         id: 1,
         color: "#d87953",
         name: "orange",
-        profileImage: treximage.treximage,
+        profileImage:
+          "3xynL1hw/orangetrex-removebg-preview.png",
       },
       {
         id: 2,
         color: "#d68334",
         name: "brown",
-        profileImage: trexBrown.trexBrown,
+        profileImage:
+          "hjnstqdJ/browntrex-removebg-preview.png",
       },
       {
         id: 3,
         color: "#abd634",
         name: "green",
-        profileImage: trexLGreen.trexLGreen,
+        profileImage:
+          "vZpXCn8t/greentrex-removebg-preview.png",
       },
     ],
   },
@@ -217,7 +213,8 @@ export const data = [
         id: 1,
         color: "#6cd851",
         name: "green",
-        profileImage: alien.alien,
+        profileImage:
+          "fTq8jF6F/alien-removebg-preview.png",
       },
     ],
   },
@@ -282,7 +279,8 @@ export const data = [
         id: 1,
         color: "#6cd851",
         name: "green",
-        profileImage: dinosaurioDomado.dinosaurioDomado,
+        profileImage:
+          "1zwMSzfh/trexdomado-removebg-preview.png",
       },
     ],
   },
@@ -347,7 +345,8 @@ export const data = [
         id: 1,
         color: "#575757",
         name: "Negro",
-        profileImage: squeletonTrex.squeletonTrex,
+        profileImage:
+          "dtVWCvSr/carnivaltrex-removebg-preview.png",
       },
     ],
   },
@@ -412,7 +411,7 @@ export const data = [
         id: 1,
         color: "#6cd851",
         name: "green",
-        profileImage: rana.rana,
+        profileImage: "gcDSrr4G/frog-removebg-preview.png",
       },
     ],
   },

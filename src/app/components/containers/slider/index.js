@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { handleChangueCurrentTextView } from "@/redux/features/app";
+import {
+  handleChangueCurrentTextView,
+  handleChangueStatesApp,
+} from "@/redux/features/app";
 import { EffectCoverflow, Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { gray1, gray2 } from "../../../app.module.scss";
@@ -17,8 +20,10 @@ import ContentLoader from "react-content-loader";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
   const data = [...useAppSelector((state) => state.appReducer.data)];
+  const loading = useAppSelector(
+    (state) => state.appReducer.states.loadingSlider
+  );
   const TextStyleData = {
     ...useAppSelector((state) => state.appReducer.textStyles),
   };
@@ -30,6 +35,11 @@ const Slider = () => {
         title: data[index].title,
       })
     );
+    dispatch(
+      handleChangueStatesApp({
+        loadingSlider: false,
+      })
+    );
     setCurrentIndex(index);
   };
   const handleChangueTile = (e) => {
@@ -38,7 +48,6 @@ const Slider = () => {
   };
   useEffect(() => {
     changueTitle(0);
-    setLoading(false);
   }, []);
   return (
     <Swiper

@@ -1,11 +1,15 @@
 "use client";
-import styles from "../../../../styles/principal.module.scss";
+import { useRef, useEffect } from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { handleChangueStatesApp } from "@/redux/features/app";
+
 import InText from "../../components/commons/inText";
 import Slider from "../../components/containers/slider";
-import Header from "../../components/containers/Header"
-import Footer from "../../components/containers/Footer"
+import Header from "../../components/containers/Header";
+import Footer from "../../components/containers/Footer";
 import Winter from "../../components/containers/seasons/winter";
-import { useRef } from "react";
+
+import styles from "../../../../styles/principal.module.scss";
 // import { getAllpublications } from "../../utils/publication";
 const Principal = () => {
   const InTextChild = useRef();
@@ -15,6 +19,17 @@ const Principal = () => {
       useswr;
     }
   };
+  const dispatch = useAppDispatch();
+  const handleChangueLoading = () => {
+    dispatch(
+      handleChangueStatesApp({
+        loading: false,
+      })
+    );
+  };
+  useEffect(() => {
+    handleChangueLoading();
+  }, []);
   // const handleFullScreenMode = () => {
   //   document.documentElement.requestFullscreen();
   // };
@@ -23,12 +38,11 @@ const Principal = () => {
   // };
   return (
     <div className={styles.container}>
-      <Winter/>
-      <Header/>
+      <Winter />
+      <Header />
       <InText />
-      <Slider
-      />
-      <Footer/>
+      <Slider />
+      <Footer />
     </div>
   );
 };
